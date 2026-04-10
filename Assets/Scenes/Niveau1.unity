@@ -266,8 +266,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 28372604}
+  - component: {fileID: 28372607}
+  - component: {fileID: 28372606}
+  - component: {fileID: 28372605}
   m_Layer: 0
-  m_Name: ConteneurPersonnage
+  m_Name: Joueur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,6 +292,136 @@ Transform:
   - {fileID: 870837093}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &28372605
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28372603}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.22696161, y: 0.98188126}
+  m_Size: {x: 1.3807478, y: 1.990432}
+  m_Direction: 0
+--- !u!50 &28372606
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28372603}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 5
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &28372607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28372603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7268b28219c91d4ab44580e96a04ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeplacementPersonnage
+  actionMarche:
+    m_Name: Action Marche
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 11117567-a687-4149-8246-8050981bb4e3
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: b4def22e-e0ec-4b86-8e36-a780bf4cf09c
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action Marche
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 6ff86c84-6440-4078-acc2-406bf7afb6e1
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action Marche
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: f6253437-3ab6-4c2e-8426-f9d8f841c3de
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action Marche
+      m_Flags: 8
+    m_Flags: 0
+  actionSaut:
+    m_Name: Action Saut
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7a58eba6-95d0-4b22-882e-b828496a6426
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 34004f4c-d380-4870-85ca-ffecc38fe4e9
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action Saut
+      m_Flags: 0
+    m_Flags: 0
+  vitesse: 10
+  inputMarche: 0
+  forceSaut: 5
+  inputSaut: 0
 --- !u!1 &30114685
 GameObject:
   m_ObjectHideFlags: 0
@@ -3834,7 +3967,7 @@ Transform:
   m_GameObject: {fileID: 870837092}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.22, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18769,6 +18902,7 @@ GameObject:
   - component: {fileID: 2017097013}
   - component: {fileID: 2017097014}
   - component: {fileID: 2017097015}
+  - component: {fileID: 2017097016}
   m_Layer: 0
   m_Name: lave
   m_TagString: Lave
@@ -18896,6 +19030,40 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1.875}
   m_EdgeRadius: 0
+--- !u!114 &2017097016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017097012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9a41de665c4c94eba55a22078f86de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeplacementPersonnage
+  actionMarche:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ce2aa0bb-7333-4d94-a489-a2710dd33b58
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  actionSaut:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f8711a88-c468-4469-8c5e-2239146a5a35
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  vitesse: 10
+  inputMarche: 0
+  forceSaut: 5
+  inputSaut: 0
 --- !u!1 &2048862022
 GameObject:
   m_ObjectHideFlags: 0
