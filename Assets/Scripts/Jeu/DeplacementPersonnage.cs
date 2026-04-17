@@ -23,7 +23,7 @@ public class DeplacementPersonnage : MonoBehaviour
     [Header("Saut")]
     public float forceSaut = 5f;
 
-    public float forceDash = 10f;
+    public float forceDash = 25f;
     public bool inputSaut;
 
     public bool inputDash;

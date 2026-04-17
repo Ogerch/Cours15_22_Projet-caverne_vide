@@ -326,8 +326,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.00916183, y: 3.7563305}
-  m_Size: {x: 1.4397786, y: 2.1675243}
+  m_Offset: {x: 0.4456308, y: 1.1141703}
+  m_Size: {x: 1.4014201, y: 2.2505174}
   m_Direction: 0
 --- !u!50 &28372606
 Rigidbody2D:
@@ -418,10 +418,29 @@ MonoBehaviour:
       m_Action: Action Saut
       m_Flags: 0
     m_Flags: 0
+  actionDash:
+    m_Name: Action Dash
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d0f728f8-c77a-4cfd-b960-cf8545d1f0ec
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 790fe413-78ac-4fbc-9b33-0c1b804c5512
+      m_Path: <Keyboard>/b
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action Dash
+      m_Flags: 0
+    m_Flags: 0
   vitesse: 10
   inputMarche: 0
   forceSaut: 5
+  forceDash: 25
   inputSaut: 0
+  inputDash: 0
 --- !u!1 &30114685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,7 +1617,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 14.166508, y: 3.7043276}
+  m_Offset: {x: 14.166508, y: 2.5079033}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1608,7 +1627,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 45.335716, y: 11.964809}
+  m_Size: {x: 45.335716, y: 14.357658}
   m_EdgeRadius: 0
 --- !u!4 &253070655
 Transform:
@@ -3481,7 +3500,7 @@ Transform:
   m_GameObject: {fileID: 717601150}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.791979, y: 2.2222853, z: -10}
+  m_LocalPosition: {x: 8.791964, y: -2.5634131, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4194,7 +4213,7 @@ Transform:
   m_GameObject: {fileID: 870837092}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06, y: 2.72, z: 0}
+  m_LocalPosition: {x: 0.42, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19269,6 +19288,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9a41de665c4c94eba55a22078f86de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeplacementPersonnage
+  actionMarche:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 67193314-5bd9-4954-8af0-9ad6c579bda7
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  actionSaut:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e470850e-8059-4dc9-a534-60396c507f58
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  actionDash:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 76dda88c-4e58-4202-9f70-008d7e7660e4
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  vitesse: 10
+  inputMarche: 0
+  forceSaut: 5
+  forceDash: 10
+  inputSaut: 0
+  inputDash: 0
 --- !u!1 &2048862022
 GameObject:
   m_ObjectHideFlags: 0
