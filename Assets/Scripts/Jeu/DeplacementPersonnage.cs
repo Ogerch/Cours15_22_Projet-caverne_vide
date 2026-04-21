@@ -28,6 +28,10 @@ public class DeplacementPersonnage : MonoBehaviour
 
     public bool inputDash;
 
+    public bool estAuSol;
+
+    public LayerMask masqueSol; 
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -60,9 +64,15 @@ public class DeplacementPersonnage : MonoBehaviour
     void Update()
     {
         inputMarche = actionMarche.ReadValue<float>();
-        if (actionSaut.WasPressedThisFrame())
+        // new vector2(0,-1)
+        estAuSol = Physics2D.Raycast(transform.position,Vector2.down, 0.1f,masqueSol); //returnes true or false
+
+        Debug.DrawRay(transform.position, Vector2.down * 1, Color.orange);
+
+        if (actionSaut.WasPressedThisFrame() && estAuSol)
         {
             inputSaut = true;
+           
         }
         else
         {
@@ -91,6 +101,7 @@ public class DeplacementPersonnage : MonoBehaviour
 
         float vitesseAbsolue = Mathf.Abs(rb.linearVelocityX);
         anim.SetFloat("vitesse", vitesseAbsolue);
+         anim.SetBool("estDansLair", estAuSol == false);
         
 
         // if ()

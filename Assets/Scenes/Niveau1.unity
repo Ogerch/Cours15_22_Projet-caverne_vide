@@ -285,7 +285,7 @@ Transform:
   m_GameObject: {fileID: 28372603}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.6819706, y: -2.9522514, z: 0}
+  m_LocalPosition: {x: 4.95, y: -2.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -326,8 +326,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.4456308, y: 1.1141703}
-  m_Size: {x: 1.4014201, y: 2.2505174}
+  m_Offset: {x: 0.0042533875, y: 0.9937172}
+  m_Size: {x: 1.3386288, y: 2.0040555}
   m_Direction: 0
 --- !u!50 &28372606
 Rigidbody2D:
@@ -344,7 +344,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 5
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -437,10 +437,14 @@ MonoBehaviour:
     m_Flags: 0
   vitesse: 10
   inputMarche: 0
-  forceSaut: 5
+  forceSaut: 25
   forceDash: 25
   inputSaut: 0
   inputDash: 0
+  estAuSol: 0
+  masqueSol:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &30114685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1044,7 @@ Transform:
   m_GameObject: {fileID: 138870349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.791971, y: -2.9522514, z: -10}
+  m_LocalPosition: {x: 9.059999, y: -2.31, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3500,7 +3504,7 @@ Transform:
   m_GameObject: {fileID: 717601150}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.791964, y: -2.5634131, z: -10}
+  m_LocalPosition: {x: 9.059999, y: -2.31, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4213,7 +4217,7 @@ Transform:
   m_GameObject: {fileID: 870837092}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.42, y: 0.03, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5409,7 +5413,7 @@ GameObject:
   - component: {fileID: 1180667956}
   - component: {fileID: 1180667955}
   - component: {fileID: 1180667954}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19292,7 +19296,7 @@ MonoBehaviour:
     m_Name: 
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 67193314-5bd9-4954-8af0-9ad6c579bda7
+    m_Id: 0ba12849-6794-479c-bc6f-d60694ee2302
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -19301,7 +19305,7 @@ MonoBehaviour:
     m_Name: 
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: e470850e-8059-4dc9-a534-60396c507f58
+    m_Id: 8ccc9682-a4c4-4821-b9af-7e584b681222
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -19310,7 +19314,7 @@ MonoBehaviour:
     m_Name: 
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 76dda88c-4e58-4202-9f70-008d7e7660e4
+    m_Id: 3bf9f510-3894-4ef3-989b-d986f8f6af0e
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -19318,9 +19322,12 @@ MonoBehaviour:
   vitesse: 10
   inputMarche: 0
   forceSaut: 5
-  forceDash: 10
+  forceDash: 25
   inputSaut: 0
   inputDash: 0
+  estAuSol: 0
+  masqueSol:
+    m_Bits: 0
 --- !u!1 &2048862022
 GameObject:
   m_ObjectHideFlags: 0
