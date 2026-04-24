@@ -15,6 +15,8 @@ public class DeplacementPersonnage : MonoBehaviour
 
     public InputAction actionDash;
 
+    public InputAction actionTir;
+
     [Header("Déplacement horizontal")]
 
     public float vitesse = 10f;
@@ -32,7 +34,16 @@ public class DeplacementPersonnage : MonoBehaviour
 
     public LayerMask masqueSol; 
 
+    [Header ("Tir")]
 
+    public GameObject projectilePrefab;
+
+    public GameObject pointDeCreation;
+
+    public float directionProjectile = 1f;
+
+    public float delaiTir = 0.25f;
+    public float tempsEntreTirs = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,6 +59,7 @@ public class DeplacementPersonnage : MonoBehaviour
         actionMarche.Enable();
         actionSaut.Enable();
         actionDash.Enable();
+        actionTir.Enable();
     }
 
     void OnDisable()
@@ -55,6 +67,7 @@ public class DeplacementPersonnage : MonoBehaviour
         actionMarche.Disable();
         actionSaut.Disable();
         actionDash.Disable();
+        actionTir.Disable();
     }
 
 
@@ -90,14 +103,41 @@ public class DeplacementPersonnage : MonoBehaviour
             inputDash = false;
         }
 
+
+        // Minuterie pour declancher le tir
+        if(tempsEntreTirs > 0){
+
+            tempsEntreTirs -= Time.deltaTime;
+        }
+        // On peut tirer si on appuie sur le boutton
+        if(actionTir.WasPressedThisFrame() == true && tempsEntreTirs <= 0)
+        {
+            tempsEntreTirs = delaiTir;
+           GameObject clone = Instantiate(projectilePrefab, pointDeCreation.transform.position, pointDeCreation.transform.rotation);
+            clone.GetComponent<Projectile>().direction = directionProjectile;
+        }
+
+
+
         if (inputMarche < 0f)
         {
             sr.flipX = true;
+            Vector2 nouvellePosition = pointDeCreation.transform.localPosition;
+            nouvellePosition.x = -1.5f;
+            pointDeCreation.transform.localPosition = nouvellePosition;
+
+            directionProjectile = -1;
         }
         else if (inputMarche > 0f)
         {
             sr.flipX = false;
+              Vector2 nouvellePosition = pointDeCreation.transform.localPosition;
+            nouvellePosition.x = 1.5f;
+            pointDeCreation.transform.localPosition = nouvellePosition;
+
+            directionProjectile = 1;
         }
+
 
         float vitesseAbsolue = Mathf.Abs(rb.linearVelocityX);
         anim.SetFloat("vitesse", vitesseAbsolue);
