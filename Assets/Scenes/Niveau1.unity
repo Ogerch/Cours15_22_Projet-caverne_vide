@@ -285,11 +285,12 @@ Transform:
   m_GameObject: {fileID: 28372603}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.95, y: -2.31, z: 0}
+  m_LocalPosition: {x: 6.87, y: -2.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 870837093}
+  - {fileID: 1089870793}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &28372605
@@ -435,6 +436,23 @@ MonoBehaviour:
       m_Action: Action Dash
       m_Flags: 0
     m_Flags: 0
+  actionTir:
+    m_Name: Action Tir
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 62c1b743-1870-4af1-aef9-71116d02bbb8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 188d4290-9fe5-444b-8d0b-a3d3fed22ecd
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Action Tir
+      m_Flags: 0
+    m_Flags: 0
   vitesse: 10
   inputMarche: 0
   forceSaut: 25
@@ -445,6 +463,11 @@ MonoBehaviour:
   masqueSol:
     serializedVersion: 2
     m_Bits: 64
+  projectilePrefab: {fileID: 3780972794865220359, guid: 412c11fc3a4dc1a4ca0b8f66664502d1, type: 3}
+  pointDeCreation: {fileID: 1089870792}
+  directionProjectile: 1
+  delaiTir: 0.25
+  tempsEntreTirs: 0
 --- !u!1 &30114685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +1067,7 @@ Transform:
   m_GameObject: {fileID: 138870349}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.059999, y: -2.31, z: -10}
+  m_LocalPosition: {x: 10.98, y: -2.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1915,8 +1938,8 @@ Transform:
   m_GameObject: {fileID: 267930527}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8553489, y: -5.89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 24.6, y: -1.9, z: 0}
+  m_LocalScale: {x: 3.5572, y: 1.4371, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 122878418}
@@ -3504,7 +3527,7 @@ Transform:
   m_GameObject: {fileID: 717601150}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.059999, y: -2.31, z: -10}
+  m_LocalPosition: {x: 10.980001, y: -2.5634131, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5084,6 +5107,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1089870792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089870793}
+  m_Layer: 0
+  m_Name: pointProjectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1089870793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089870792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.28, y: 0.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 28372604}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1103178108
 GameObject:
   m_ObjectHideFlags: 0
@@ -19296,7 +19350,7 @@ MonoBehaviour:
     m_Name: 
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 0ba12849-6794-479c-bc6f-d60694ee2302
+    m_Id: ae07c11d-d5a4-46ef-998b-adbf757d8897
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -19305,7 +19359,7 @@ MonoBehaviour:
     m_Name: 
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 8ccc9682-a4c4-4821-b9af-7e584b681222
+    m_Id: 22186388-d4bb-431c-888b-8b736255d2fc
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -19314,7 +19368,16 @@ MonoBehaviour:
     m_Name: 
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 3bf9f510-3894-4ef3-989b-d986f8f6af0e
+    m_Id: bd04b256-0b6c-4fb9-b5d1-c398f8a02e2f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  actionTir:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 83b7e99d-5e9d-4537-80bb-20978038fb67
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -19328,6 +19391,9 @@ MonoBehaviour:
   estAuSol: 0
   masqueSol:
     m_Bits: 0
+  projectilePrefab: {fileID: 0}
+  pointDeCreation: {fileID: 0}
+  directionProjectile: 1
 --- !u!1 &2048862022
 GameObject:
   m_ObjectHideFlags: 0
@@ -19720,7 +19786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4786202135021528823, guid: c06877d7579860d41b015924da60b2a7, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7655630941201599695, guid: c06877d7579860d41b015924da60b2a7, type: 3}
       propertyPath: m_BodyType
