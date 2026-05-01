@@ -54,7 +54,7 @@ public class GenerateurEnnemis : MonoBehaviour
         }
         else
         {
-            CancelInvoke("GenererEnnemiAleatoire",0,delaiGeneration);
+            // CancelInvoke("GenererEnnemiAleatoire",0,delaiGeneration);
         }
     }
 }
